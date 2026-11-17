@@ -1,0 +1,15 @@
+# Normalise line endings on checkout so the Python and Markdown render identically
+# everywhere; keep binary artefacts binary.
+* text=auto eol=lf
+
+*.png   binary
+*.pdf   binary
+*.zip   binary
+*.docx  binary
+*.parquet binary
+
+*.csv   text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.json  text eol=lf
+*.txt   text eol=lf

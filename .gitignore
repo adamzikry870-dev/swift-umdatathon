@@ -1,0 +1,22 @@
+# Supplied dataset: not redistributed, see "Getting the data" in README.md
+swift_umdac_datathon_2026_fictitious_payment_data.csv
+swift_umdac_datathon_2026_fictitious_payment_data.zip
+
+# Derived from the CSV above in one step (analysis/convert_csv.py)
+analysis/payments.parquet
+
+# Scratch output from the panel builders
+dashboard/data/_*/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Office lock files
+~$*
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

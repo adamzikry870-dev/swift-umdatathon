@@ -1,0 +1,7 @@
+{
+  "n_rows": 10000000,
+  "ordering_token_present": 0.6084595,
+  "ordering_match_when_present": 1.0,
+  "beneficiary_token_present": 0.6107358,
+  "beneficiary_match_when_present": 0.009795725090947673
+}

@@ -1,0 +1,11 @@
+# Packages needed to rebuild the panels and documents from the raw CSV.
+# Verified with Python 3.12 on Windows; duckdb 2.0.0, pandas 2.3.3, numpy 2.2.6,
+# scipy 1.16.3, matplotlib 3.10.7, reportlab 4.2.0, python-docx 1.2.0, pymupdf 1.24.0.
+duckdb>=1.1
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+reportlab>=4.0
+python-docx>=1.1
+pymupdf>=1.24
