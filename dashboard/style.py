@@ -4,14 +4,21 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 from matplotlib.patches import FancyBboxPatch
 
-NAVY   = "#0B3D6B"
+NAVY   = "#0B3D6B"   # observed
 TEAL   = "#1F6F8B"
-GOLD   = "#C9962B"
+GOLD   = "#B8862B"   # baseline / comparator
 CORAL  = "#C0504D"
 GREEN  = "#3C7A5A"
 GREY   = "#6B7280"
 LGREY  = "#D9DEE5"
 BG     = "#FFFFFF"
+
+# page furniture
+INK    = "#14212B"
+BODY   = "#33404D"
+MUTED  = "#6B7684"
+RULE   = "#DDE3EA"
+TINT   = "#F4F6F9"
 
 PAIRS = {"B→B": NAVY, "B→C": TEAL, "C→B": GOLD, "C→C": CORAL}
 CYCLE = [NAVY, TEAL, GOLD, CORAL, GREEN, "#7B5EA7", "#8C6D46", "#4F8FA6"]
@@ -22,8 +29,13 @@ def setup():
         "figure.facecolor": BG,
         "axes.facecolor": BG,
         "savefig.facecolor": BG,
-        "font.family": "Calibri",
+        "font.family": "Segoe UI",
         "font.size": 10,
+        # dollar signs are text here, never math
+        "text.parse_math": False,
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
+        "svg.fonttype": "none",
         "axes.edgecolor": "#9AA3AE",
         "axes.linewidth": 0.8,
         "axes.labelcolor": "#1F2937",
@@ -45,14 +57,13 @@ def setup():
 
 def frame(fig, title, kicker, takeaway, source="Swift UMDAC Datathon 2026 · synthetic payment data · 10,000,000 records"):
     """Standard page furniture: kicker, title, takeaway strip, source footer."""
-    esc = lambda s: s.replace("$", r"\$")
     fig.text(0.045, 0.955, kicker.upper(), fontsize=8.5, color=TEAL, fontweight="bold", va="top")
-    fig.text(0.045, 0.925, esc(title), fontsize=17, color=NAVY, fontweight="bold", va="top")
+    fig.text(0.045, 0.925, title, fontsize=17, color=NAVY, fontweight="bold", va="top")
     # takeaway strip
     fig.patches.append(FancyBboxPatch((0.045, 0.038), 0.91, 0.062, boxstyle="round,pad=0.004,rounding_size=0.008",
                                       transform=fig.transFigure, facecolor="#F2F5F9", edgecolor="none",
                                       zorder=-10))
-    fig.text(0.058, 0.069, esc(takeaway), fontsize=9.8, color="#1F2937", va="center", wrap=True)
+    fig.text(0.058, 0.069, takeaway, fontsize=9.8, color="#1F2937", va="center", wrap=True)
     fig.text(0.045, 0.018, source, fontsize=7.5, color=GREY, va="center")
     fig.text(0.955, 0.018, "fictitious data", fontsize=7.5, color=GREY, va="center", ha="right")
 
